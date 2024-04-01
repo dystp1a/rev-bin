@@ -11,11 +11,12 @@ in strcmp the input is rotated left 3 times and right 2 times which is rol by 1
 this is the rsi value of strncmp and it reads bytes from 0x400328 into the rdi value.
 ![image](https://github.com/dystp1a/rev-bin/assets/143863591/6af3b911-2b4b-4e29-85c3-160b4c964439) 
 
-in strncmp, it check if the rdi values^12 +6 == the rsi values
+in strncmp, it check if the random bytes ^12 +6 == the manipulated input
 
 
 
-
+# Solution script
+ on rotating the (random bytes ^12 +6) right by 1 we get the flag
 
 ```py
 byte_seq = [
@@ -30,7 +31,7 @@ for byte in new_byt:
     print((byte), end=' ')
 
 ```
-194 174 106 212 200 142 180 228 156 142 216 108 154 100 104 
+> 194 174 106 212 200 142 180 228 156 142 216 108 154 100 104 
 
 ```py
 a=[194, 174, 106, 212, 200, 142, 180, 228, 156, 142, 216, 108, 154, 100, 104 ]
@@ -40,5 +41,5 @@ def ror(num, shift):
 for i in a:
     print (chr(ror(i,1)),end="")
 ```
-aW5jdGZrNGl6M24
+> aW5jdGZrNGl6M24
 flag: inctf{aW5jdGZrNGl6M24}
