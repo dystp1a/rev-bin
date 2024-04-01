@@ -42,4 +42,5 @@ for i in a:
     print (chr(ror(i,1)),end="")
 ```
 > aW5jdGZrNGl6M24
+
 flag: inctf{aW5jdGZrNGl6M24}
